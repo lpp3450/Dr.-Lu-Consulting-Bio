@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRUCTURES110 – Heightened Research | Dr. Lu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-dark: #2c3e50;
+            --slate: #3d5a73;
+            --slate-light: #4a6d8a;
+            --gold: #c9a227;
+            --gold-light: #d4b342;
+            --cream: #f8f6f1;
+            --white: #ffffff;
+            --charcoal: #1a1a1a;
+            --text-muted: #a8b8c8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--charcoal);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-logo span {
+            color: var(--white);
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero h1 .accent {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.4rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .contact-btn-call {
+            background: var(--gold);
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+        }
+
+        .contact-btn-call:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+
+        .contact-btn-email {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid var(--slate-light);
+        }
+
+        .contact-btn-email:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .contact-btn svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--slate), transparent);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: var(--slate-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .credential-item {
+            padding: 1.25rem;
+            background: rgba(61, 90, 115, 0.3);
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .credential-item:hover {
+            background: rgba(61, 90, 115, 0.5);
+            transform: translateX(5px);
+        }
+
+        .credential-item h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .credential-item p {
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--charcoal);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: rgba(61, 90, 115, 0.15);
+            border: 1px solid rgba(61, 90, 115, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--slate);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--cream);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Bottom Contact Section */
+        .contact-bottom {
+            padding: 5rem 2rem;
+            background: var(--slate-dark);
+            text-align: center;
+        }
+
+        .contact-bottom h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-bottom p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-bottom .contact-buttons {
+            max-width: 380px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            background: var(--charcoal);
+            text-align: center;
+            border-top: 1px solid var(--slate-dark);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer-text em {
+            font-style: normal;
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-btn {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .about, .services, .contact-bottom {
+                padding: 3.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo">STRUCTURES<span>110</span></div>
+        <p class="hero-tagline">Heightened Research, LLC</p>
+        
+        <h1>AI Strategy & <span class="accent">Transformational</span> Leadership</h1>
+        <p class="hero-description">Dr. Lu partners with leaders and organizations ready to harness AI, unlock human potential, and create lasting transformation through coaching, consulting, and cutting-edge technology integration.</p>
+        
+        <!-- Contact Buttons -->
+        <div class="contact-buttons">
+            <a href="tel:5708721096" class="contact-btn contact-btn-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call or Text Me
+            </a>
+            <a href="mailto:Lutheria.n.peters@gmail.com" class="contact-btn contact-btn-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 6l-10 7L2 6"/>
+                </svg>
+                Email Me
+            </a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="section-header">
+            <p class="section-label">About Dr. Lu</p>
+            <h2 class="section-title">Where Technology Meets Human Potential</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>AI Consultant & Certified Transformational Coach</h3>
+                <p>Dr. Lu brings a rare combination of technical mastery and human-centered coaching to every engagement. As an AI consultant and certified transformational coach, Dr. Lu helps individuals and organizations navigate the rapidly evolving landscape of artificial intelligence while staying grounded in what matters most: people.</p>
+                <p>With certification in Emergenetics—a powerful framework for understanding thinking and behavioral preferences—Dr. Lu creates customized strategies that honor how people naturally think, collaborate, and lead.</p>
+                <p>Through STRUCTURES110 – Heightened Research, Dr. Lu offers boutique consulting that bridges the gap between emerging technology and meaningful human transformation.</p>
+            </div>
+            <div class="credentials">
+                <div class="credential-item">
+                    <h4>AI Consultant</h4>
+                    <p>Expert guidance on AI adoption, automation, and intelligent tool integration</p>
+                </div>
+                <div class="credential-item">
+                    <h4>Certified Transformational Coach</h4>
+                    <p>Empowering leaders to break through barriers and achieve breakthrough results</p>
+                </div>
+                <div class="credential-item">
+                    <h4>Emergenetics Certified</h4>
+                    <p>Leveraging brain science to optimize team dynamics and performance</p>
+                </div>
+                <div class="credential-item">
+                    <h4>Data-Informed Approach</h4>
+                    <p>Grounding strategy and coaching in meaningful analytics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="section-header">
+            <p class="section-label">Services</p>
+            <h2 class="section-title">How I Can Help</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI Consulting & Integration</h3>
+                <p>Navigate the AI revolution with confidence. From selecting the right tools to building custom workflows, I help you harness artificial intelligence to amplify your impact.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦋</div>
+                <h3>Transformational Coaching</h3>
+                <p>Break through limiting beliefs and step into your full potential. Whether you're navigating a career transition or scaling your leadership, coaching creates space for lasting change.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Emergenetics Workshops</h3>
+                <p>Understand how you and your team think and behave. Emergenetics profiles unlock powerful insights for communication and building high-performing teams.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Workflow Automation</h3>
+                <p>Reclaim your time with intelligent automation. I design and implement AI-powered workflows that eliminate repetitive tasks and let you focus on high-value work.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Executive Advisory</h3>
+                <p>Strategic thought partnership for leaders navigating complexity. Gain a trusted advisor who brings both technical fluency and deep understanding of human dynamics.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Strategy</h3>
+                <p>Turn information into insight. I help organizations build data practices that inform decisions without drowning in numbers—clarity over complexity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Contact Section -->
+    <section class="contact-bottom">
+        <h2>Ready to Transform?</h2>
+        <p>Let's start a conversation about AI, coaching, or building your high-performing team.</p>
+        <div class="contact-buttons">
+            <a href="tel:5708721096" class="contact-btn contact-btn-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call or Text Me
+            </a>
+            <a href="mailto:Lutheria.n.peters@gmail.com" class="contact-btn contact-btn-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 6l-10 7L2 6"/>
+                </svg>
+                Email Me
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">STRUCTURES110</div>
+        <p class="footer-text">© 2026 STRUCTURES110 – Heightened Research, LLC. <em>For informational purposes only.</em></p>
+    </footer>
+</body>
+</html>Bio
