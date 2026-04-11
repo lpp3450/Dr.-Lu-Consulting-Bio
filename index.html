@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lu | STRUCTURES110 – AI Consultant & Transformational Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        background: #0a0a0a;
+        color: #ffffff;
+        line-height: 1.6;
+    }
+
+    .hero {
+        min-height: 100vh;
+        background: #0a0a0a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: #fff;
+        margin-bottom: 0.25rem;
+    }
+
+    .logo span {
+        color: #d4a84b;
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #d4a84b;
+        margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+    .hero h1 .gold {
+        color: #d4a84b;
+        font-style: italic;
+    }
+
+    .hero-text {
+        font-size: 1.05rem;
+        color: #999;
+        margin-bottom: 2.5rem;
+        max-width: 480px;
+        line-height: 1.7;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .btn {
+        display: block;
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-gold {
+        background: #d4a84b;
+        color: #000;
+        border: 2px solid #d4a84b;
+    }
+
+    .btn-gold:hover {
+        background: #e5bc63;
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: #fff;
+        border: 2px solid #333;
+    }
+
+    .btn-outline:hover {
+        border-color: #d4a84b;
+        color: #d4a84b;
+    }
+
+    .btn-label {
+        display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+        opacity: 0.8;
+    }
+
+    .btn-value {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .about {
+        background: #111;
+        padding: 4rem 1.5rem;
+    }
+
+    .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #d4a84b;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.75rem;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-heading {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        color: #d4a84b;
+        margin-bottom: 1.25rem;
+        text-align: center;
+    }
+
+    .about-text {
+        color: #888;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        text-align: center;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .credentials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cred {
+        background: #1a1a1a;
+        border-left: 3px solid #d4a84b;
+        padding: 1rem;
+    }
+
+    .cred h4 {
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #d4a84b;
+        margin-bottom: 0.4rem;
+    }
+
+    .cred p {
+        color: #ccc;
+        font-size: 0.85rem;
+    }
+
+    .services {
+        background: #0a0a0a;
+        padding: 4rem 1.5rem;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .service {
+        background: #111;
+        border: 1px solid #222;
+        padding: 1.5rem;
+        border-radius: 4px;
+    }
+
+    .service:hover {
+        border-color: #d4a84b;
+    }
+
+    .service-icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .service h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 0.5rem;
+    }
+
+    .service p {
+        color: #777;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .cta {
+        background: #111;
+        padding: 4rem 1.5rem;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.75rem;
+        color: #fff;
+        margin-bottom: 0.75rem;
+    }
+
+    .cta p {
+        color: #777;
+        margin-bottom: 2rem;
+    }
+
+    .cta .buttons {
+        margin: 0 auto;
+    }
+
+    footer {
+        background: #0a0a0a;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+        color: #d4a84b;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.4rem;
+    }
+
+    .footer-text {
+        color: #555;
+        font-size: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+        .hero h1 { font-size: 3rem; }
+        .services-grid { grid-template-columns: 1fr 1fr; max-width: 700px; }
+        .credentials { grid-template-columns: repeat(4, 1fr); max-width: 800px; }
+    }
+</style>
+```
+
+</head>
+<body>
+    <section class="hero">
+        <div class="logo">STRUCTURES<span>110</span></div>
+        <p class="tagline">Heightened Research, LLC</p>
+        <h1>AI Strategy &<br><span class="gold">Transformational</span> Leadership</h1>
+        <p class="hero-text">Dr. Lu partners with leaders and organizations ready to harness AI, unlock human potential, and create lasting transformation.</p>
+        <div class="buttons">
+            <a href="tel:+15708721096" class="btn btn-gold">
+                <span class="btn-label">Call or Text Me</span>
+                <span class="btn-value">(570) 872-1096</span>
+            </a>
+            <a href="mailto:Lutheria.n.peters@gmail.com" class="btn btn-outline">
+                <span class="btn-label">Email Me</span>
+                <span class="btn-value">Lutheria.n.peters@gmail.com</span>
+            </a>
+        </div>
+    </section>
+
+```
+<section class="about">
+    <p class="section-label">About Dr. Lu</p>
+    <h2 class="section-title">Where Technology Meets Human Potential</h2>
+    <h3 class="about-heading">AI Consultant & Certified Transformational Coach</h3>
+    <p class="about-text">Dr. Lu brings a rare combination of technical mastery and human-centered coaching to every engagement. As an AI consultant and certified transformational coach, Dr. Lu helps individuals and organizations navigate the rapidly evolving landscape of artificial intelligence while staying grounded in what matters most: people.</p>
+    <p class="about-text">With certification in Emergenetics—a powerful framework for understanding thinking and behavioral preferences—Dr. Lu creates customized strategies that honor how people naturally think, collaborate, and lead.</p>
+    <div class="credentials">
+        <div class="cred"><h4>AI Consultant</h4><p>Expert AI guidance</p></div>
+        <div class="cred"><h4>Coach</h4><p>Certified transformational</p></div>
+        <div class="cred"><h4>Emergenetics</h4><p>Certified practitioner</p></div>
+        <div class="cred"><h4>Data-Informed</h4><p>Analytics-driven</p></div>
+    </div>
+</section>
+
+<section class="services">
+    <p class="section-label">Services</p>
+    <h2 class="section-title">How I Can Help</h2>
+    <div class="services-grid">
+        <div class="service"><div class="service-icon">🤖</div><h3>AI Consulting</h3><p>Navigate the AI revolution with confidence. Select the right tools and build custom workflows.</p></div>
+        <div class="service"><div class="service-icon">🦋</div><h3>Transformational Coaching</h3><p>Break through limiting beliefs and step into your full potential.</p></div>
+        <div class="service"><div class="service-icon">🧠</div><h3>Emergenetics Workshops</h3><p>Understand how you and your team think and behave.</p></div>
+        <div class="service"><div class="service-icon">🔄</div><h3>Workflow Automation</h3><p>Reclaim your time with intelligent automation.</p></div>
+        <div class="service"><div class="service-icon">🎯</div><h3>Executive Advisory</h3><p>Strategic thought partnership for leaders navigating complexity.</p></div>
+        <div class="service"><div class="service-icon">📊</div><h3>Data Strategy</h3><p>Turn information into insight. Clarity over complexity.</p></div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to Transform?</h2>
+    <p>Let's start a conversation about AI, coaching, or building your team.</p>
+    <div class="buttons">
+        <a href="tel:+15708721096" class="btn btn-gold">
+            <span class="btn-label">Call or Text Me</span>
+            <span class="btn-value">(570) 872-1096</span>
+        </a>
+        <a href="mailto:Lutheria.n.peters@gmail.com" class="btn btn-outline">
+            <span class="btn-label">Email Me</span>
+            <span class="btn-value">Lutheria.n.peters@gmail.com</span>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">STRUCTURES110</div>
+    <p class="footer-text">© 2026 STRUCTURES110 – Heightened Research, LLC. For informational purposes only.</p>
+</footer>
+```
+
+</body>
+</html>
